@@ -79,8 +79,8 @@
 // // функции слово палиндромом или нет.
 
    function palindrome (word) {
-    let arr = word.split ('').reverse().join('');
-    if ( word===arr) {
+    let wordBackward = word.split ('').reverse().join('');
+    if ( word===wordBackward) {
         return alert ( Boolean(1) );
     } else {
         return alert ( Boolean(0) );
@@ -139,7 +139,3 @@ for (let i = 0; i < randomArray.length; i++) {
   }
 }
 replaceToZero();
-
-// Сделайте commit с комментарием, описывающим проделанную вами работу.
-// Сделайте push.
-// Сделайте pull request на GitHub и при этом добавьте в ревьюеры преподавателя.
