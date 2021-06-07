@@ -142,44 +142,122 @@
 
 
 
-// LESSON-4
+// // LESSON-4
 
-// Напишите функцию sum, которая возвращает сумму чисел следующим образом:
-// console.log(sum(5)(2)); // 7
+// // Напишите функцию sum, которая возвращает сумму чисел следующим образом:
+// // console.log(sum(5)(2)); // 7
 
-	function sum(a) {
-		return function (b) {
-			return a + b;
-		}
-	}
-	console.log ("sum:", sum (5)(2));
+// 	function sum(a) {
+// 		return function (b) {
+// 			return a + b;
+// 		}
+// 	}
+// 	console.log ("sum:", sum (5)(2));
 
 
-// Покрасьте абзацы по клику (событие click):
-// даны 3 абзаца:
-// <p id="text1">Text 1</p>
-// <p id="text2">Text 2</p>
-// <p id="text3">Text 3</p>
-// дан массив цветов:
+// // Покрасьте абзацы по клику (событие click):
+// // даны 3 абзаца:
+// // <p id="text1">Text 1</p>
+// // <p id="text2">Text 2</p>
+// // <p id="text3">Text 3</p>
+// // дан массив цветов:
+// // const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+// // по первому нажатию на абзац он должен покраситься в первый цвет из массива, по второму нажатию - 
+// // во второй и так далее;
+// // цвета из массива меняются бесконечно;
+// // все абзацы работают независимо.
+
 // const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-// по первому нажатию на абзац он должен покраситься в первый цвет из массива, по второму нажатию - 
-// во второй и так далее;
-// цвета из массива меняются бесконечно;
-// все абзацы работают независимо.
+// const p = document.querySelectorAll('p');
+// const makePainter = () => {
+// 	let i = 0;
+// 	return (e) => {
+// 		e.target.style.color = colors[i];
+// 		i++;
+// 		if (i >= colors.length) {
+// 		  i = 0;
+// 		}
+// 	}
+// }
+// p.forEach((item) => {
+// 	const painter = makePainter();
+// 	item.addEventListener('click', painter);
+// });
 
-const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-const p = document.querySelectorAll('p');
-const makePainter = () => {
-	let i = 0;
-	return (e) => {
-		e.target.style.color = colors[i];
-		i++;
-		if (i >= colors.length) {
-		  i = 0;
-		}
+
+// LESSON-5
+// Преобразование формата даты:
+// в переменной date лежит дата в формате '2020-11-26';
+// преобразуйте эту дату в формат '26.11.2020';
+// функция должна быть универсальной, т.е. принимать любую дату и приводить ее к поставленному в задании формату.
+
+
+const transformDate = (date) => {
+	let arr = date.split('-').reverse();
+		for (let i = 0; i < arr.length; i++) {
+			let newDate = arr.join('.');
+			console.log(newDate);
+			return newDate;
 	}
 }
-p.forEach((item) => {
-	const painter = makePainter();
-	item.addEventListener('click', painter);
-});
+transformDate('1997-05-10');
+
+// Поиск объектов размещения:
+// дан массив;
+// напишите функцию поиска, которая будет принимать строку;
+// по полученной строке найдите все совпадения в массива;
+// верните список строк в формате: страна, город, отель.
+
+const data = [
+	{
+	  country: 'Russia',
+	  city: 'Saint Petersburg',
+	  hotel: 'Hotel Leopold',
+	},
+	{
+	  country: 'Spain',
+	  city: 'Santa Cruz de Tenerife',
+	  hotel: 'Apartment Sunshine',
+	},
+	{
+	  country: 'Slowakia',
+	  city: 'Vysokie Tatry',
+	  hotel: 'Villa Kunerad',
+	},
+	{
+	  country: 'Germany',
+	  city: 'Berlin',
+	  hotel: 'Hostel Friendship',
+	},
+	{
+	  country: 'Indonesia',
+	  city: 'Bali',
+	  hotel: 'Ubud Bali Resort&SPA',
+	},
+	{
+	  country: 'Netherlands',
+	  city: 'Rotterdam',
+	  hotel: 'King Kong Hostel',
+	},
+	{
+	  country: 'Marocco',
+	  city: 'Ourika',
+	  hotel: 'Rokoko Hotel',
+	},
+	{
+	  country: 'Germany',
+	  city: 'Berlin',
+	  hotel: 'Hotel Rehberge Berlin Mitte',
+	},
+];
+
+const searchFunc = (str) => {
+	for (let i = 0; i < data.length; i++){
+	const arr = data[i].country + data[i].city + data[i].hotel;
+		if(arr.includes(str)) {
+		console.log (data[i]);
+		}
+	}
+	return arr;
+}
+console.log(searchFunc('Hotel Leopold'));
