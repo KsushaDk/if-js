@@ -1,0 +1,142 @@
+@import "./variables.scss";
+
+.reviews {
+  padding: 0 104px;
+  h2 {
+    text-align: center;
+    font-family: $FontRoboto;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    color: $TextColor;
+    padding-top: 120px;
+    padding-bottom: 104px;
+  }
+  &__carrousel {
+    display: flex;
+    padding-bottom: 120px;
+    justify-content: space-around;
+  }
+  &__place {
+    background: $BgColor;
+    width: 400px;
+  }
+  &__place:last-child {
+    position: relative;
+  }
+  &__place:last-child::after {
+    position: absolute;
+    content: url(../../images/arrow.svg);
+    top: 180px;
+    left: 377px;
+  }
+  &__photo {
+    position: relative;
+    p {
+      position: absolute;
+      top: 62%;
+      left: 5%;
+      font-size: 18px;
+      line-height: 21px;
+      color: $GeneralWhite;
+      z-index: 1;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  &__photo::after {
+    content: "";
+    height: 48px;
+    position: absolute;
+    top: 88%;
+    left: 0;
+    right: 0;
+    background: rgba(56, 56, 56, 0.7);
+    opacity: 1;
+  }
+  &__averagemark {
+    position: relative;
+    p {
+      font-family: $FontRoboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: $TextSecondary;
+      position: absolute;
+      top: -50px;
+      right: 24px;
+      padding: 0;
+      text-align: right;
+    }
+  }
+  &__value {
+    background: $GeneralBlue;
+    width: 48px;
+    height: 32px;
+    border-radius: 8px;
+    position: absolute;
+    top: -87px;
+    right: 24px;
+    p {
+      font-family: $FontRoboto;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      color: $GeneralWhite;
+      padding-top: 2px;
+      padding-bottom: 0px;
+      position: absolute;
+      top: 2px;
+      left: 12px;
+    }
+  }
+  &__location {
+    a {
+      text-decoration: none;
+    }
+    p {
+      font-family: $FontRoboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 21px;
+      color: $AccentBlue;
+      padding-top: 26px;
+      padding-left: 24px;
+      padding-bottom: 16px;
+      text-align: left;
+    }
+    p:last-child {
+      font-weight: 400;
+      padding-top: 0px;
+      padding-bottom: 31px;
+    }
+  }
+  &__comment {
+    position: relative;
+    padding-bottom: 24px;
+    p {
+      font-size: 18px;
+      line-height: 21px;
+      text-align: left;
+      padding: 0px 24px 8px 24px;
+    }
+    p:nth-child(1) {
+      padding-left: 104px;
+    }
+    p:nth-child(2) {
+      color: $TextSecondary;
+      padding-left: 104px;
+      padding-bottom: 24px;
+    }
+    p::after {
+      content: url(../../images/guest.svg);
+      position: absolute;
+      top: 0px;
+      left: 30px;
+    }
+  }
+}

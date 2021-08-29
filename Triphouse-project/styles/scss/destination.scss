@@ -1,0 +1,116 @@
+@import "./variables.scss";
+
+.destination {
+  padding: 0 105px;
+  h2 {
+    text-align: center;
+    font-family: $FontRoboto;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    color: $TextColor;
+    padding-top: 120px;
+    padding-bottom: 105px;
+  }
+  &__buttons {
+    display: flex;
+    padding-bottom: 65px;
+    button {
+      height: 64px;
+      border: none;
+      border-radius: 8px;
+      background: $StrokeColor;
+      display: inline;
+      color: $TextColor;
+    }
+    button:nth-child(1) {
+      width: 192px;
+      background: $AccentBlue;
+      color: $GeneralWhite;
+      font-family: $FontRoboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+    }
+    button:nth-child(2) {
+      width: 192px;
+      font-family: $FontRoboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+      border-radius: 0;
+    }
+    button:nth-child(3) {
+      width: 240px;
+      font-family: $FontRoboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+      border-radius: 0 8px 8px 0;
+    }
+  }
+  &__carrousel {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    p {
+      display: flex;
+      justify-content: left;
+      font-family: $FontRoboto;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+      color: $AccentBlue;
+      padding-top: 25px;
+      padding-bottom: 210px;
+    }
+  }
+  &__carrousel::after {
+    content: url(../../images/destination/arrow.svg);
+    position: absolute;
+    top: 400px;
+    transform: rotate(90deg);
+  }
+  &__image {
+    display: block;
+    position: relative;
+  }
+  &__image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(56, 56, 56, 0.4);
+    opacity: 0;
+  }
+  &__image::before {
+    content: url(../../images/destination/book_now.svg);
+    position: absolute;
+    width: 16%;
+    top: 40%;
+    left: 28%;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 2;
+  }
+  &__image:hover::after,
+  &__image:hover::before {
+    opacity: 1;
+  }
+}

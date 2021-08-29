@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/css/main.css">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <!-- <link rel="icon" href="./images/svg-sprite.svg"> -->
+    <title>TripHouse</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="header__section">
+                <div class="header__navi">
+                    <a href="#">
+                        <img src="./images/header/logo_triphouse_blue.svg" alt="logo" />
+                    </a>
+                    <ul>
+                        <li class="header__stays"><a href="#">Stays</a></li>
+                        <li class="header__attractions"><a href="#">Attractions</a></li>
+                        <li><div class="header__night"></div></li>
+                        <li><a href="#"></a><div class="header__account"></div></a></li>
+                    </ul>
+                </div>
+                <div class="header__search">
+                    <p class="header__title">Discover stays<br />
+                        to live, work or just relax</p>
+                    <form action="" method="GET">
+                        <div class="header__destination">
+                            <p>
+                                <label for="search">Your destination or hotel name</label>
+                            </p>
+                            <input id="search" type="text" name="search" placeholder="New York" />
+                        </div>
+                        <div class="header__date">
+                            <div class="header__in">
+                                <p>
+                                    <label for="in">Check-in - </label>
+                                </p>
+                                <input type="date" id="datein" />
+                            </div>
+                            <div class="header__out">
+                                <p>
+                                    <label for="in">Check-out</label>
+                                </p>
+                                <input type="date" id="dateout" />
+                            </div>
+                        </div>
+                        <div class="header__people">
+                            <input type="text" id="people" placeholder="2 Adults — 0 Children — 1 Room"/>
+                        </div>
+                        <button>Search</button>
+                    </form>
+                    <div class="header__people_filter">
+                        <div class="header__people_filter_adults">
+                            <span>
+                                <label for="adults">Adults</label>
+                            </span>
+                            <div class="header__people_count">
+                                <button class="minus" value="-">-</button>
+                                <input id="adults" type="text" value ="0" placeholder="0"/>
+                                <button class="plus" value="+">+</button>
+                            </div>
+                        </div>
+                        <div class="header__people_filter_children">
+                            <span>
+                                <label for="children">Children</label>
+                            </span>
+                            <div class="header__people_count">
+                                <button class="minus" value="-">-</button>
+                                <input id="children" type="text" value ="0" placeholder="0" />
+                                <button class="plus" value="+">+</button>
+                            </div>
+                        </div>
+                        <div class="header__people_filter_rooms">
+                            <span>
+                                <label for="rooms">Rooms</label>
+                            </span>
+                            <div class="header__people_count">
+                                <button class="minus" value="-">-</button>
+                                <input id="rooms" type="text" value="0" placeholder="0"/>
+                                <button class="plus" value="+">+</button>
+                            </div>
+                        </div>
+                        <div class="header__people_children_age">
+                            <span>
+                                <label for="age">What is the age of the child you’re travelling with?</label>
+                            </span>
+                            <select id="age_selector">
+                                <option>0 years old</option>
+                                <option>1 years old</option>
+                                <option>2 years old</option>
+                                <option>3 years old</option>
+                                <option>4 years old</option>
+                                <option>5 years old</option>
+                                <option>6 years old</option>
+                                <option>7 years old</option>
+                                <option>8 years old</option>
+                                <option>9 years old</option>
+                                <option>10 years old</option>
+                                <option>11 years old</option>
+                                <option>12 years old</option>
+                                <option>13 years old</option>
+                                <option>14 years old</option>
+                                <option>15 years old</option>
+                                <option>16 years old</option>
+                                <option>17 years old</option>
+                            </select>
+                        </div>
+                    </div>
+                <div class="header__apps">
+                    <a href="#"><img src="./images/header/google_play.svg" alt="google-play"></a>
+                    <a href="#"><img src="./images/header/app_store.svg" alt="app_store"></a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="offers__section">
+                <div class="offers">
+                    <h2 class="offers__title">What do we offers</h2>
+                    <div class="offers__items">
+                        <div class="offers__item">
+                            <img src="./images/support.svg" alt="support"/>
+                            <p class="offers__text">Support 24/7</p>
+                        </div>
+                        <div class="offers__item">
+                            <img src="./images/communicate.svg" alt="communication"/>
+                            <p class="offers__text">Communicate directly</p>
+                        </div>
+                        <div class="offers__item">
+                            <img src="./images/booking.svg" alt="booking"/>
+                            <p class="offers__text">Book online</p>
+                        </div>
+                        <div class="offers__item">
+                            <img src="./images/reviews.svg" alt="reviews"/>
+                            <p class="offers__text">Real guest reviews</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="hotels">
+                <h2 class="hotels__title">Homes guests loves</h2>
+                <!-- <div class="hotels__carrousel">
+                    <div>
+                        <a href="">
+                            <img/>
+                            <img src="./images/hotel_leopold.svg" alt="leopold" />
+                            <p>Hotel Leopold</p>
+                            <p>Saint Petersburg, Russia</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="">
+                            <img/>
+                            <img src="./images/apartment_sunshine.svg" alt="sunshine" />
+                            <p>Apartment Sunshine</p>
+                            <p>Santa  Cruz de Tenerife, <br />
+                                Spain</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="">
+                            <img/>
+                            <img src="./images/villa_kunerad.svg" alt="kunerad" />
+                            <p>Villa Kunerad</p>
+                            <p>Vysokie Tatry, Slowakia</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="">
+                            <img/>
+                            <img src="./images/hostel_friendship.svg" alt="friendship">
+                            <p>Hostel Friendship</p>
+                            <p>Berlin, Germany</p>
+                        </a>
+                    </div>
+                </div> -->
+            </section>
+            <section class="destination">
+                <h2>The best destinations</h2>
+                <div class="destination__buttons">
+                    <button>Regions</button>
+                    <button>Cities</button>
+                    <button>Places of interest</button>
+                </div>
+                <div class="destination__carrousel">
+                    <div>
+                        <a href="">
+                            <div class="destination__image">
+                                <img src="./images/destination/destination_maldives.svg" alt="maldives" />
+                            </div>
+                            <p>Maldives</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="">
+                            <div class="destination__image">
+                                <img src="./images/destination/destination_spain.svg" alt="spain" />
+                            </div>
+                            <p>Spain</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="">
+                            <div class="destination__image">
+                                <img src="./images/destination/destination_norway.svg" alt="norway" />
+                            </div>
+                            <p>Norway</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="">
+                            <div class="destination__image">
+                                <img src="./images/destination/destination_island.svg" alt="island" />
+                            </div>
+                            <p>Island</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="signup">
+                    <p>Sign up and get 20% off your first booking</p>
+                    <button>Sign up</button>
+            </section>
+            <section class="reviews">
+                <h2 class="reviews__title">Guests reviews</h2>
+                <div class="reviews__carrousel">
+                    <div class="reviews__place">
+                        <div class="reviews__photo">
+                            <a href="">
+                                <img src="./images/bali.svg" alt="bali" />
+                            </a>
+                            <p>From 250 USD</p>
+                        </div>
+                        <div class="reviews__location">
+                            <a href="">
+                                <p>Ubud Bali Resort&SPA</p>
+                                <p>Bali, Indonesia</p>
+                            </a>
+                        </div>
+                        <div class="reviews__averagemark">
+                            <div class="reviews__value">
+                                <p>9,4</p>
+                            </div>
+                            <p>1324 reviews</p>
+                        </div>
+                        <div class="reviews__comment">
+                            <p>Hanna Ivanova</p>
+                            <p>&#x1f1fa;&#x1f1e6; Ukraine</p>
+                            <p>Great location, really pleasant and clean rooms, but the thing that makes
+                                this such a good place to stay are the staff. 
+                                All of the people are incredibly helpful and generous
+                                with their time and advice. </p>
+                        </div>
+                    </div>
+                    <div class="reviews__place">
+                        <div class="reviews__photo">
+                            <a href="">
+                                <img src="./images/rotterdam.svg" alt="rotterdam" />
+                            </a>
+                            <p>From 40 USD</p>
+                        </div>
+                        <div class="reviews__location">
+                            <a href="">
+                                <p>King Kong Hostel</p>
+                                <p>Rotterdam, Netherlands</p>
+                            </a>
+                        </div>
+                        <div class="reviews__averagemark">
+                            <div class="reviews__value">
+                                <p>8,9</p>
+                            </div>
+                            <p>2016 reviews</p>
+                        </div>
+                        <div class="reviews__comment">
+                            <p>Adam Smith</p>
+                            <p>&#x1F1FA;&#x1F1F8; USA</p>
+                            <p>I've been in this hostel for a month and here is the best hostel of all
+                                Excellent management of excellent and ethical staff and bedrooms Bathrooms 
+                                are always clean and excellent
+                                Most importantly, those who work here are kind and good-natured.</p>
+                        </div>
+                    </div>
+                    <div class="reviews__place">
+                        <div class="reviews__photo">
+                            <a href="">
+                                <img src="./images/ourika.svg" alt="ourika" />
+                            </a>
+                            <p>From 100 USD</p>
+                        </div>
+                        <div class="reviews__location">
+                            <a href="">
+                                <p>Rokoko Hotel</p>
+                                <p>Ourika, Marocco</p>
+                            </a>
+                        </div>
+                        <div class="reviews__averagemark">
+                            <div class="reviews__value">
+                                <p>9,1</p>
+                            </div>
+                            <p>815 reviews</p>
+                        </div>
+                        <div class="reviews__comment">
+                            <p>Anika Messer</p>
+                            <p>&#x1F1E9;&#x1F1EA; Germany</p>
+                            <p>Efficient, friendly, professional, and appropriately attentive. 
+                                Great hotel in a great location. Easy access to all the surrounding 
+                                historical sites. Staff is fantastic. Will definitely stay at this 
+                                location during my next stay in Marocco.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <section class="footer__section">
+                <ul>
+                    <li class="footer__title">About</li>
+                    <li><a href="#">How Triphouse works</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+                <ul>
+                    <li class="footer__title">Property types</li>
+                    <li><a href="#">Guest houses</a></li>
+                    <li><a href="#">Hotels</a></li>
+                    <li><a href="#">Apartments</a></li>
+                    <li><a href="#">Villas</a></li>
+                    <li><a href="#">Holiday homes</a></li>
+                    <li><a href="#">Hostels</a></li>
+                </ul>
+                <ul>
+                    <li class="footer__title">Support</li>
+                    <li><a href="#">Contact Customer Service</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+                <p class="footer__ps">&copy; 2020 Triphouse, Inc. All rights reserved.</p>
+            </section>
+        </footer>
+    </div>
+<script src="./main.js"></script>
+</body>
+</html>

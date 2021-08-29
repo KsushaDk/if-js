@@ -1,0 +1,42 @@
+@import "./variables.scss";
+
+.offers {
+  padding-top: 120px;
+  padding-bottom: 122px;
+  &__title {
+    text-align: center;
+    font-family: $FontRoboto;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  &__title::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background-color: $AccentYellow;
+    margin: 0px auto;
+    top: 67px;
+    left: 0;
+    right: 0;
+  }
+  &__items {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-top: 92px;
+  }
+  &__item {
+    text-align: center;
+  }
+  &__text {
+    margin-top: 44px;
+    font-family: $FontRoboto;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
