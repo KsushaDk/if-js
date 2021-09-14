@@ -91,7 +91,7 @@ header {
   font-size: 24px;
 }
 .header__destination {
-  flex-grow: 10;
+  flex-grow: 5;
 }
 .header__destination p {
   padding-bottom: 24px;
@@ -116,12 +116,15 @@ header {
   border-right: none;
 }
 .header__people {
-  flex-grow: 4;
+  flex-grow: 3;
   display: flex;
   padding-top: 45px;
 }
 .header__people input {
   border-left: none;
+  flex-grow: 1;
+}
+.header__people input:last-child {
   border-radius: 0px 8px 8px 0px;
 }
 .header__people input::placeholder {
@@ -177,8 +180,11 @@ header {
   text-align: right;
   padding-right: 5px;
 }
-.header__people_filter {
+#header__people_filter {
   display: none;
+}
+.header__people_filter_focus {
+  display: block !important;
   background-color: #ffffff;
   width: 259px;
   height: auto;
@@ -192,19 +198,19 @@ header {
   color: #333333;
   padding: 22px;
 }
-.header__people_filter div {
+.header__people_filter_focus div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.header__people_filter input {
+.header__people_filter_focus input {
   width: 48px;
   height: 30px;
   margin-top: 0px;
   border: none;
   text-align: center;
 }
-.header__people_filter div:nth-child(4) {
+.header__people_filter_focus div:nth-child(4) {
   display: none;
 }
 
@@ -212,11 +218,11 @@ header {
   padding-bottom: 12px;
 }
 
-.header__people_filter span {
+.header__people_filter_focus span {
   padding-bottom: 12px;
 }
 
-.header__people_filter button {
+.header__people_filter_focus button {
   width: 30px;
   height: 30px;
   margin-top: 0px;
@@ -224,24 +230,19 @@ header {
   color: #3077c6;
   background-color: #ffffff;
 }
+#children__btn-dec {
+  border: 1px solid #CECECE;
+  color: #CECECE;
+}
 
 .header__people_children_age {
   flex-direction: column;
-  display: none;
 }
 .header__people_children_age span {
   padding-top: 16px;
   font-size: 12px;
 }
 .header__people_children_age select {
-  margin-top: 12px;
-  display: block;
-  height: 30px;
-  width: 99px;
-  font-size: 12px;
-  border: 1px solid #3077c6;
-}
-.header__people_children_age select {
   display: block;
   margin-top: 10px;
   height: 30px;
@@ -249,9 +250,9 @@ header {
   font-size: 12px;
   border: 1px solid #3077c6;
 }
-.whyfuckingstylesdontcopy {
+.selector_style_visible {
   display: block;
-  margin-top: 10px;
+  margin-top: 5px;
   height: 30px;
   width: 99px;
   font-size: 12px;
@@ -547,12 +548,12 @@ header {
 .reviews__place:last-child {
   position: relative;
 }
-.reviews__place:last-child::after {
+/* .reviews__place:last-child::after {
   position: absolute;
   content: url(../../images/arrow.svg);
   top: 180px;
   left: 377px;
-}
+} */
 .reviews__photo {
   position: relative;
 }

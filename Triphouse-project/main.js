@@ -1,156 +1,202 @@
-const inputPeople = document.querySelector('.header__people');
-const divFilter = document.querySelector('.header__people_filter');
+/* eslint-disable no-useless-concat */
+const counterPeopleInput = document.querySelector('.header__people');
+const filterPeople = document.getElementById('header__people_filter');
 
-const showFilter = () => {
-  const filterShown = document.querySelector('.header__people_filter');
-  filterShown.style.display = 'block';
+const shownInpAd = document.getElementById('people_ad');
+const shownInpCh = document.getElementById('people_ch');
+const shownInpRm = document.getElementById('people_rm');
+
+const currentInputAd = document.getElementById('adults');
+const currentInputCh = document.getElementById('children');
+const currentInputRm = document.getElementById('rooms');
+
+const adultsBtnInc = document.getElementById('adults__btn-inc');
+const adultsBtnDec = document.getElementById('adults__btn-dec');
+const childrenBtnInc = document.getElementById('children__btn-inc');
+const childrenBtnDec = document.getElementById('children__btn-dec');
+const roomsBtnInc = document.getElementById('rooms__btn-inc');
+const roomsBtnDec = document.getElementById('rooms__btn-dec');
+
+const childrenSelector = document.querySelector('.header__people_children_age');
+const addedSelector = document.querySelector('div.header__people_children_age select');
+
+const colorBorderBlur = '1px solid #CECECE';
+const colorBlur = '#CECECE';
+const colorBorderFocus = '1px solid #3077c6';
+const colorFocus = '#3077c6';
+
+let filterValues = {
+  adults: 1,
+  children: 0,
+  rooms: 1,
 };
 
-const hideFilter = () => {
-  divFilter.style.display = 'none';
+currentInputAd.value = filterValues.adults;
+currentInputCh.value = filterValues.children;
+currentInputRm.value = filterValues.rooms;
+
+const focusFilter = () => {
+  filterPeople.classList.toggle('header__people_filter_focus');
+};
+counterPeopleInput.addEventListener('click', focusFilter);
+
+const countFunctionInc = (mode) => {
+  if (mode === 'adults') {
+    filterValues = { ...filterValues, adults: filterValues.adults + 1 };
+
+    currentInputAd.value = filterValues.adults;
+    shownInpAd.setAttribute('placeholder', `${currentInputAd.value}` + ' Adults');
+
+    if (currentInputAd.value >= 30) {
+      adultsBtnInc.disabled = true;
+      adultsBtnInc.style.border = colorBorderBlur;
+      adultsBtnInc.style.color = colorBlur;
+    } else {
+      adultsBtnDec.disabled = false;
+      adultsBtnDec.style.border = colorBorderFocus;
+      adultsBtnDec.style.color = colorFocus;
+      adultsBtnInc.style.border = colorBorderFocus;
+      adultsBtnInc.style.color = colorFocus;
+    }
+  } else if (mode === 'children') {
+    filterValues = { ...filterValues, children: filterValues.children + 1 };
+
+    currentInputCh.value = filterValues.children;
+    shownInpCh.setAttribute('placeholder', `${currentInputCh.value}` + ' Children');
+
+    if (currentInputCh.value >= 10) {
+      childrenBtnInc.disabled = true;
+      childrenBtnInc.style.border = colorBorderBlur;
+      childrenBtnInc.style.color = colorBlur;
+    } else {
+      childrenBtnDec.disabled = false;
+      childrenBtnDec.style.border = colorBorderFocus;
+      childrenBtnDec.style.color = colorFocus;
+      childrenBtnInc.style.border = colorBorderFocus;
+      childrenBtnInc.style.color = colorFocus;
+    }
+  } else if (mode === 'rooms') {
+    filterValues = { ...filterValues, rooms: filterValues.rooms + 1 };
+
+    currentInputRm.value = filterValues.rooms;
+    shownInpRm.setAttribute('placeholder', `${currentInputRm.value}` + ' Rooms');
+
+    if (currentInputRm.value >= 30) {
+      roomsBtnInc.disabled = true;
+      roomsBtnInc.style.border = colorBorderBlur;
+      roomsBtnInc.style.color = colorBlur;
+    } else {
+      roomsBtnDec.disabled = false;
+      roomsBtnDec.style.border = colorBorderFocus;
+      roomsBtnDec.style.color = colorFocus;
+      roomsBtnInc.style.border = colorBorderFocus;
+      roomsBtnInc.style.color = colorFocus;
+    }
+  }
 };
 
-inputPeople.addEventListener('focusin', showFilter);
-divFilter.addEventListener('focusout', hideFilter);
+const countFunctionDec = (mode) => {
+  if (mode === 'adults') {
+    filterValues = { ...filterValues, adults: filterValues.adults - 1 };
 
-const minus = document.querySelectorAll('.header__people_count button.minus');
-const plus = document.querySelectorAll('.header__people_count button.plus');
+    currentInputAd.value = filterValues.adults;
+    shownInpAd.setAttribute('placeholder', `${currentInputAd.value}` + ' Adults');
 
-// ADULTS
-
-const buttonDecEl = document.querySelectorAll('.header__people_count button.minus');
-const buttonIncEl = document.querySelectorAll('.header__people_count button.plus');
-
-const countAdults = () => {
-  const countInputAdults = document.getElementById('adults');
-  let count = 0;
-
-  return (a) => {
-    if (a === 'dec') {
-      count -= 1;
+    if (currentInputAd.value < 1) {
+      adultsBtnDec.disabled = true;
+      adultsBtnDec.style.border = colorBorderBlur;
+      adultsBtnDec.style.color = colorBlur;
     } else {
-      count += 1;
+      adultsBtnDec.disabled = false;
+      adultsBtnInc.disabled = false;
+      adultsBtnDec.style.border = colorBorderFocus;
+      adultsBtnDec.style.color = colorFocus;
+      adultsBtnInc.style.border = colorBorderFocus;
+      adultsBtnInc.style.color = colorFocus;
     }
-    if (count < 0 || count > 30) {
-      minus[0].style.border = '1px solid #CECECE';
-      minus[0].style.color = '#CECECE';
-      plus[0].style.border = '1px solid #CECECE';
-      plus[0].style.color = '#CECECE';
-    } else {
-      minus[0].style.border = '1px solid #3077c6';
-      minus[0].style.color = '#3077c6';
-      plus[0].style.border = '1px solid #3077c6';
-      plus[0].style.color = '#3077c6';
-    }
-    if (count < 0 || count > 30) {
-      return count;
-    }
+  } else if (mode === 'children') {
+    filterValues = { ...filterValues, children: filterValues.children - 1 };
 
-    countInputAdults.value = count;
-  };
+    currentInputCh.value = filterValues.children;
+    shownInpCh.setAttribute('placeholder', `${currentInputCh.value}` + ' Children');
+
+    if (currentInputCh.value <= 0) {
+      childrenBtnDec.disabled = true;
+      childrenBtnDec.style.border = colorBorderBlur;
+      childrenBtnDec.style.color = colorBlur;
+    } else {
+      childrenBtnDec.disabled = false;
+      childrenBtnInc.disabled = false;
+      childrenBtnDec.style.border = colorBorderFocus;
+      childrenBtnDec.style.color = colorFocus;
+      childrenBtnInc.style.border = colorBorderFocus;
+      childrenBtnInc.style.color = colorFocus;
+    }
+  } else if (mode === 'rooms') {
+    filterValues = { ...filterValues, rooms: filterValues.rooms - 1 };
+
+    currentInputRm.value = filterValues.rooms;
+    shownInpRm.setAttribute('placeholder', `${currentInputRm.value}` + ' Rooms');
+
+    if (currentInputRm.value < 1) {
+      roomsBtnDec.disabled = true;
+      roomsBtnDec.style.border = colorBorderBlur;
+      roomsBtnDec.style.color = colorBlur;
+    } else {
+      roomsBtnDec.disabled = false;
+      roomsBtnInc.disabled = false;
+      roomsBtnDec.style.border = colorBorderFocus;
+      roomsBtnDec.style.color = colorFocus;
+      roomsBtnInc.style.border = colorBorderFocus;
+      roomsBtnInc.style.color = colorFocus;
+    }
+  }
 };
 
-const countAd = countAdults();
-
-buttonDecEl[0].addEventListener('click', () => countAd('dec'));
-buttonIncEl[0].addEventListener('click', () => countAd('inc'));
-
-// CHILDREN
-
-const countChildren = () => {
-  const countInputChildren = document.getElementById('children');
-  let count = 0;
-
-  return (a) => {
-    if (a === 'dec') {
-      count -= 1;
-    } else {
-      count += 1;
-    }
-    if (count < 0 || count > 10) {
-      minus[1].style.border = '1px solid #CECECE';
-      minus[1].style.color = '#CECECE';
-      plus[1].style.border = '1px solid #CECECE';
-      plus[1].style.color = '#CECECE';
-    } else {
-      minus[1].style.border = '1px solid #3077c6';
-      minus[1].style.color = '#3077c6';
-      plus[1].style.border = '1px solid #3077c6';
-      plus[1].style.color = '#3077c6';
-    }
-
-    if (count < 0 || count > 10) {
-      return count;
-    }
-
-    countInputChildren.value = count;
-  };
-};
-
-const countCh = countChildren();
-
-buttonDecEl[1].addEventListener('click', () => countCh('dec'));
-buttonIncEl[1].addEventListener('click', () => countCh('inc'));
+adultsBtnInc.addEventListener('click', () => countFunctionInc('adults'));
+adultsBtnDec.addEventListener('click', () => countFunctionDec('adults'));
+childrenBtnInc.addEventListener('click', () => countFunctionInc('children'));
+childrenBtnDec.addEventListener('click', () => countFunctionDec('children'));
+roomsBtnInc.addEventListener('click', () => countFunctionInc('rooms'));
+roomsBtnDec.addEventListener('click', () => countFunctionDec('rooms'));
 
 const showChildrenSelect = () => {
-  const childrenSelector = document.querySelector('.header__people_filter div:nth-child(4)');
   childrenSelector.style.display = 'block';
-  if (document.getElementById('children').value >= 2) {
-    const childrenSelectorAnother = document.getElementById('age_selector').cloneNode(true);
-    childrenSelectorAnother.classList.add('whyfuckingstylesdontcopy');
-    document.querySelector('.header__people_filter').appendChild(childrenSelectorAnother);
+  if (currentInputCh.value > 1) {
+    const select = addedSelector.cloneNode(true);
+    addedSelector.after(select);
   }
 };
-buttonIncEl[1].addEventListener('click', showChildrenSelect);
+childrenBtnInc.addEventListener('click', showChildrenSelect);
 
 const hideChildrenSelect = () => {
-  document.querySelector('#age_selector').remove();
-  if (document.getElementById('children').value < 1) {
-    document.querySelector('.header__people_filter div:nth-child(4)').style.display = 'none';
+  if (currentInputCh.value < 1) {
+    childrenSelector.style.display = 'none';
+  } else {
+    const select = document.querySelector('.header__people_children_age select');
+    select.remove();
   }
 };
-buttonDecEl[1].addEventListener('click', hideChildrenSelect);
+childrenBtnDec.addEventListener('click', hideChildrenSelect);
 
-// ROOMS
+// Hotels
 
-const countRooms = () => {
-  const countInputRooms = document.getElementById('rooms');
-  let count = 0;
-
-  return (a) => {
-    if (a === 'dec') {
-      count -= 1;
-    } else {
-      count += 1;
-    }
-    if (count < 0 || count > 30) {
-      minus[2].style.border = '1px solid #CECECE';
-      minus[2].style.color = '#CECECE';
-      plus[2].style.border = '1px solid #CECECE';
-      plus[2].style.color = '#CECECE';
-    } else {
-      minus[2].style.border = '1px solid #3077c6';
-      minus[2].style.color = '#3077c6';
-      plus[2].style.border = '1px solid #3077c6';
-      plus[2].style.color = '#3077c6';
-    }
-    if (count < 0 || count > 30) {
-      return count;
-    }
-
-    countInputRooms.value = count;
-  };
-};
-
-const countRm = countRooms();
-
-buttonDecEl[2].addEventListener('click', () => countRm('dec'));
-buttonIncEl[2].addEventListener('click', () => countRm('inc'));
+const hotelTitle = document.querySelector('.hotels__title');
 
 async function getHotelsData(url) {
-  const response = await fetch(url);
-  const hotelsData = await response.json();
-  return hotelsData;
+  const sessionHotelsStr = sessionStorage.getItem('hotels');
+  if (!sessionHotelsStr) {
+    try {
+      const response = await fetch(url);
+      const hotelsData = await response.json();
+      sessionStorage.setItem('hotels', JSON.stringify(hotelsData));
+    } catch (err) {
+      console.log('Error:', err);
+    }
+  } else {
+    const hotelsData = JSON.parse(sessionHotelsStr);
+    return hotelsData;
+  }
 }
 
 async function pasteHotelsItems() {
@@ -159,7 +205,7 @@ async function pasteHotelsItems() {
 
   const hotelsCarrouselDiv = document.createElement('div');
   hotelsCarrouselDiv.classList.add('hotels__carrousel');
-  document.querySelector('.hotels__title').after(hotelsCarrouselDiv);
+  hotelTitle.after(hotelsCarrouselDiv);
 
   newHotels.forEach((i) => {
     const divHotel = document.createElement('div');
@@ -178,7 +224,6 @@ async function pasteHotelsItems() {
     aHotel.append(pHotel);
 
     const pCityCountry = document.createElement('p');
-    // eslint-disable-next-line no-useless-concat
     pCityCountry.innerHTML = `${i.city}` + ', ' + `${i.country}`;
     pHotel.after(pCityCountry);
   });

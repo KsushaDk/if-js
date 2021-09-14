@@ -49,19 +49,21 @@
                             </div>
                         </div>
                         <div class="header__people">
-                            <input type="text" id="people" placeholder="2 Adults — 0 Children — 1 Room"/>
+                            <input type="text" id="people_ad" placeholder="Adults" autocomplete="off"/>
+                            <input type="text" id="people_ch" placeholder="Children" autocomplete="off"/>
+                            <input type="text" id="people_rm" placeholder="Room" autocomplete="off"/>
                         </div>
                         <button>Search</button>
                     </form>
-                    <div class="header__people_filter">
+                    <div id="header__people_filter" tabindex="0">
                         <div class="header__people_filter_adults">
                             <span>
                                 <label for="adults">Adults</label>
                             </span>
                             <div class="header__people_count">
-                                <button class="minus" value="-">-</button>
-                                <input id="adults" type="text" value ="0" placeholder="0"/>
-                                <button class="plus" value="+">+</button>
+                                <button id="adults__btn-dec" class="minus" value="-">-</button>
+                                <input id="adults" type="text" value ="1" placeholder="0"/>
+                                <button id="adults__btn-inc" class="plus" value="+">+</button>
                             </div>
                         </div>
                         <div class="header__people_filter_children">
@@ -69,9 +71,9 @@
                                 <label for="children">Children</label>
                             </span>
                             <div class="header__people_count">
-                                <button class="minus" value="-">-</button>
-                                <input id="children" type="text" value ="0" placeholder="0" />
-                                <button class="plus" value="+">+</button>
+                                <button id="children__btn-dec" value="-" disabled>-</button>
+                                <input id="children" type="text" value ="0"placeholder="0" />
+                                <button id="children__btn-inc" value="+">+</button>
                             </div>
                         </div>
                         <div class="header__people_filter_rooms">
@@ -79,9 +81,9 @@
                                 <label for="rooms">Rooms</label>
                             </span>
                             <div class="header__people_count">
-                                <button class="minus" value="-">-</button>
-                                <input id="rooms" type="text" value="0" placeholder="0"/>
-                                <button class="plus" value="+">+</button>
+                                <button id="rooms__btn-dec" value="-">-</button>
+                                <input id="rooms" type="text" value="1" placeholder="0"/>
+                                <button id="rooms__btn-inc" value="+">+</button>
                             </div>
                         </div>
                         <div class="header__people_children_age">
@@ -117,7 +119,7 @@
             </div>
         </header>
         <main>
-            <section class="offers__section">
+            <!-- <section class="offers__section">
                 <div class="offers">
                     <h2 class="offers__title">What do we offers</h2>
                     <div class="offers__items">
@@ -139,7 +141,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <section class="hotels">
                 <h2 class="hotels__title">Homes guests loves</h2>
                 <!-- <div class="hotels__carrousel">
@@ -178,7 +180,7 @@
                     </div>
                 </div> -->
             </section>
-            <section class="destination">
+            <!-- <section class="destination">
                 <h2>The best destinations</h2>
                 <div class="destination__buttons">
                     <button>Regions</button>
@@ -219,12 +221,12 @@
                         </a>
                     </div>
                 </div>
-            </section>
-            <section class="signup">
+            </section> -->
+            <!-- <section class="signup">
                     <p>Sign up and get 20% off your first booking</p>
                     <button>Sign up</button>
-            </section>
-            <section class="reviews">
+            </section> -->
+            <!-- <section class="reviews">
                 <h2 class="reviews__title">Guests reviews</h2>
                 <div class="reviews__carrousel">
                     <div class="reviews__place">
@@ -312,9 +314,9 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
         </main>
-        <footer>
+        <!-- <footer>
             <section class="footer__section">
                 <ul>
                     <li class="footer__title">About</li>
@@ -339,7 +341,7 @@
                 </ul>
                 <p class="footer__ps">&copy; 2020 Triphouse, Inc. All rights reserved.</p>
             </section>
-        </footer>
+        </footer> -->
     </div>
 <script src="./main.js"></script>
 </body>

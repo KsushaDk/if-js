@@ -5,7 +5,7 @@ header {
   background: url(../../images/header/bg_header.svg);
   background-size: cover;
 }
-.whyfuckingstylesdontcopy {
+.selector_style {
   display: block;
   margin-top: 10px;
   height: 30px;
@@ -82,7 +82,7 @@ header {
     }
   }
   &__destination {
-    flex-grow: 10;
+    flex-grow: 5;
     p {
       padding-bottom: 24px;
       padding-left: 20px;
@@ -104,12 +104,16 @@ header {
     }
   }
   &__people {
-    flex-grow: 4;
+    flex-grow: 3;
     display: flex;
     padding-top: 45px;
     input {
+      flex-grow: 1;
       border-left: none;
-      border-radius: 0px 8px 8px 0px;
+      border-right: none;
+      :last-child {
+        border-radius: 0px 8px 8px 0px;
+      }
     }
     input::placeholder {
       color: $TextColor;
@@ -170,13 +174,12 @@ header {
   &__people {
     &_children_age {
       flex-direction: column;
-      display: none;
       span {
         padding-top: 16px;
         font-size: 12px;
       }
       select {
-        margin-top: 12px;
+        margin-top: 10px;
         display: block;
         height: 30px;
         width: 99px;
@@ -187,18 +190,21 @@ header {
   }
   &_filter {
     display: none;
-    background-color: $GeneralWhite;
-    width: 259px;
-    height: auto;
-    position: absolute;
-    top: 640px;
-    right: 310px;
-    border-radius: 8px;
-    font-family: Roboto;
-    font-weight: 400;
-    font-size: 16px;
-    color: #333333;
-    padding: 22px;
+    &_focus {
+      display: block !important;
+      background-color: #ffffff;
+      width: 259px;
+      height: auto;
+      position: absolute;
+      top: 640px;
+      right: 310px;
+      border-radius: 8px;
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 16px;
+      color: #333333;
+      padding: 22px;
+    }
     div {
       display: flex;
       justify-content: space-between;

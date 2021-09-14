@@ -24,12 +24,12 @@
   &__place:last-child {
     position: relative;
   }
-  &__place:last-child::after {
-    position: absolute;
-    content: url(../../images/arrow.svg);
-    top: 180px;
-    left: 377px;
-  }
+  // &__place:last-child::after {
+  //   position: absolute;
+  //   content: url(../../images/arrow.svg);
+  //   top: 180px;
+  //   left: 377px;
+  // }
   &__photo {
     position: relative;
     p {
