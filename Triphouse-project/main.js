@@ -64,6 +64,15 @@ const countFunctionInc = (mode) => {
     currentInputCh.value = filterValues.children;
     shownInpCh.setAttribute('placeholder', `${currentInputCh.value}` + ' Children');
 
+    if (currentInputCh.value > 0) {
+      childrenSelector.style.display = 'block';
+    }
+    if (currentInputCh.value > 1) {
+      const selectInc = addedSelector.cloneNode(true);
+      selectInc.classList.add('selector_style_visible');
+      childrenSelector.append(selectInc);
+    }
+
     if (currentInputCh.value >= 10) {
       childrenBtnInc.disabled = true;
       childrenBtnInc.style.border = colorBorderBlur;
@@ -120,6 +129,13 @@ const countFunctionDec = (mode) => {
     currentInputCh.value = filterValues.children;
     shownInpCh.setAttribute('placeholder', `${currentInputCh.value}` + ' Children');
 
+    if (currentInputCh.value < 1) {
+      childrenSelector.style.display = 'none';
+    } else {
+      const selectDec = document.querySelector('.header__people_children_age select');
+      selectDec.remove();
+    }
+
     if (currentInputCh.value <= 0) {
       childrenBtnDec.disabled = true;
       childrenBtnDec.style.border = colorBorderBlur;
@@ -159,25 +175,6 @@ childrenBtnInc.addEventListener('click', () => countFunctionInc('children'));
 childrenBtnDec.addEventListener('click', () => countFunctionDec('children'));
 roomsBtnInc.addEventListener('click', () => countFunctionInc('rooms'));
 roomsBtnDec.addEventListener('click', () => countFunctionDec('rooms'));
-
-const showChildrenSelect = () => {
-  childrenSelector.style.display = 'block';
-  if (currentInputCh.value > 1) {
-    const select = addedSelector.cloneNode(true);
-    addedSelector.after(select);
-  }
-};
-childrenBtnInc.addEventListener('click', showChildrenSelect);
-
-const hideChildrenSelect = () => {
-  if (currentInputCh.value < 1) {
-    childrenSelector.style.display = 'none';
-  } else {
-    const select = document.querySelector('.header__people_children_age select');
-    select.remove();
-  }
-};
-childrenBtnDec.addEventListener('click', hideChildrenSelect);
 
 // Hotels
 
