@@ -1,0 +1,42 @@
+@import "./variables.scss";
+
+.signup {
+  background: $MainBackColor;
+  position: relative;
+  height: 200px;
+  margin: 0px 105px;
+  p {
+    font-family: $FontRoboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: left;
+    padding-top: 51px;
+    padding-bottom: 21px;
+    padding-left: 134px;
+  }
+  button {
+    border: 1px solid $AccentBlue;
+    border-radius: 8px;
+    background: $GeneralWhite;
+    color: $AccentBlue;
+    height: 48px;
+    width: 128px;
+    position: absolute;
+    top: 100px;
+    left: 134px;
+  }
+}
+.signup::before {
+  content: url(../../images/add_user.svg);
+  position: absolute;
+  top: 57px;
+  left: 24px;
+}
+.signup::after {
+  content: url(../../images/close.svg);
+  position: absolute;
+  top: 24px;
+  left: 95%;
+}

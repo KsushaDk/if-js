@@ -1,0 +1,40 @@
+@import "./variables.scss";
+
+.footer {
+  &__section {
+    background: $GeneralBlue;
+    height: 630px;
+    font-family: $FontRoboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: left;
+    color: $GeneralWhite;
+    display: flex;
+    padding: 120px 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 64px;
+    ul li {
+      list-style-type: none;
+      margin-bottom: 24px;
+      a {
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 23px;
+        color: $GeneralWhite;
+      }
+    }
+  }
+  &__title {
+    font-weight: 500;
+  }
+  &__ps {
+    position: absolute;
+    padding-top: 374px;
+    font-size: 15px;
+  }
+}

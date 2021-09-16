@@ -1,0 +1,249 @@
+@import "./variables.scss";
+
+header {
+  width: 100%;
+  background: url(../../images/header/bg_header.svg);
+  background-size: cover;
+}
+.selector_style_visible {
+  display: block;
+  margin-top: 10px;
+  height: 30px;
+  width: 99px;
+  font-size: 12px;
+  border: 1px solid $AccentBlue;
+}
+.header {
+  &__section {
+    padding: 51px 104px 120px 104px;
+    height: 100vh;
+  }
+  &__navi {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 202px;
+    ul {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      li {
+        margin-left: 25px;
+        position: relative;
+        a {
+          font-family: $FontRoboto;
+          font-weight: 400;
+          font-size: 24px;
+          list-style-type: none;
+          text-decoration: none;
+          color: $GeneralWhite;
+        }
+      }
+    }
+  }
+  form {
+    display: flex;
+    label {
+      color: $GeneralWhite;
+      line-height: 21px;
+      font-family: $FontRoboto;
+      font-weight: 400;
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+    input {
+      height: 64px;
+      width: 100%;
+      padding-left: 24px;
+      font-family: $FontRoboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+      color: $TextColor;
+      border: 3px solid #f3f3f4;
+      outline: none; 
+      border: none;
+    }
+    input:focus {
+      border: 3px solid $AccentYellow;
+    }
+    input::placeholder {
+      color: $TextColor;
+    }
+    button {
+      width: 192px;
+      flex-grow: 1;
+      height: 64px;
+      margin-top: 45px;
+      color: $GeneralWhite;
+      background: $AccentBlue;
+      border-radius: 8px;
+      font-size: 24px;
+    }
+  }
+  &__destination {
+    flex-grow: 5;
+    p {
+      padding-bottom: 24px;
+      padding-left: 20px;
+    }
+    input {
+      border-radius: 8px 0px 0px 8px;
+      border-right: none;
+    }
+  }
+  &__date {
+    flex-grow: 0;
+    display: flex;
+    p {
+      padding-bottom: 24px;
+    }
+    input {
+      border-left: none;
+      border-right: none;
+    }
+  }
+  &__people {
+    flex-grow: 3;
+    display: flex;
+    padding-top: 45px;
+    input {
+      flex-grow: 1;
+      border-left: none;
+      border-right: none;
+      :last-child {
+        border-radius: 0px 8px 8px 0px;
+      }
+    }
+    input::placeholder {
+      color: $TextColor;
+    }
+  }
+  &__stays::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: $AccentYellow;
+    top: 38px;
+    left: 0px;
+  }
+  &__attractions:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: $AccentYellow;
+    top: 38px;
+    left: 0px;
+  }
+  &__night {
+    background: url(../../images/header/header_sprite.png);
+    background-position: -5px -90px;
+    width: 30px;
+    height: 30px;
+    margin-left: 48px;
+  }
+  &__account {
+    background: url(../../images/header/header_sprite.png);
+    background-position: -5px -0px;
+    width: 40px;
+    height: 40px;
+  }
+  &__account:hover {
+    background: url(../../images/header/header_sprite.png);
+    background-position: -5px -45px;
+    width: 40px;
+    height: 40px;
+  }
+  &__title {
+    display: flex;
+    line-height: 59px;
+    font-family: $FontRoboto;
+    font-weight: 500;
+    font-size: 50px;
+    color:$GeneralWhite;
+    padding-bottom: 100px;
+  }
+  &__in {
+    p {
+      text-align: right;
+      padding-right: 5px;
+    }
+  }
+  &__people {
+    &_children_age {
+      flex-direction: column;
+      span {
+        padding-top: 16px;
+        font-size: 12px;
+      }
+      select {
+        margin-top: 10px;
+        display: block;
+        height: 30px;
+        width: 99px;
+        font-size: 12px;
+        border: 1px solid $AccentBlue;
+      }
+    }
+  }
+  &_filter {
+    display: none;
+    &_focus {
+      display: block !important;
+      background-color: #ffffff;
+      width: 259px;
+      height: auto;
+      position: absolute;
+      top: 640px;
+      right: 310px;
+      border-radius: 8px;
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 16px;
+      color: #333333;
+      padding: 22px;
+    }
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    input {
+      width: 48px;
+      height: 30px;
+      margin-top: 0px;
+      border: none;
+      text-align: center;
+    }
+    &_count {
+      padding-bottom: 12px;
+    }
+    span {
+      padding-bottom: 12px;
+    }
+    button {
+      width: 30px;
+      height: 30px;
+      margin-top: 0px;
+      border: 1px solid $AccentBlue;
+      color: $AccentBlue;
+      background-color: $GeneralWhite;
+    }
+    button.minus {
+      border: 1px solid #cecece;
+      color: #cecece;
+    }
+  } 
+  &__apps {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+    a {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+}
+
