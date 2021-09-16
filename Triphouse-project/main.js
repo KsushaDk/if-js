@@ -187,6 +187,7 @@ async function getHotelsData(url) {
       const response = await fetch(url);
       const hotelsData = await response.json();
       sessionStorage.setItem('hotels', JSON.stringify(hotelsData));
+      return hotelsData;
     } catch (err) {
       console.log('Error:', err);
     }
